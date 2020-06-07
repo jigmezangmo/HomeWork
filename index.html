@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task02</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+
+    <body>
+        <div id="wrap">
+            <header>       
+              <div class="logo">
+                  <a href="index.html">
+                     <h3><span>ZAM</span>-ARTS</h3>
+                  </a>
+              </div>
+              <nav class="main-nav">
+                <ul>
+                  <li><a href="#">Custome</a></li>
+                  <li><a href="#">ShoppingCart</a></li>
+                  <li><a href="#">ShoppingForm</a></li>
+                  <li><a href="#">Logout</a></li>
+                </ul>
+              </nav> 
+          </header>
+          
+          <div class="mainimg">
+            <div class="slide">
+                <img src="img/art01.jpg">
+              <img src="img/art02.jpg">
+              <img src="img/art03.jpg">
+              
+            </div>
+          </div>
+
+
+          <div class="new">
+            <h3>NEW ARRIVAL</h3>
+            <div class="item">
+                <ul>
+                    <li><img data-popup01-target="#popup01" class="pop01" onclick="myPop01()" src="img/new_01.jpg"></li>
+                    <li class="product">Custom Made-1</li>
+                    <li class="price">Nu.10,000</li>
+                    <li class="cart">
+                    <button type="button" onclick='document.getElementById("demo").innerHTML = "Successfully added to cart!"'>Add to Cart</button>
+                    <p id="demo"></p>
+                </ul>
+            </div>
+            
+            <div class="item">
+                <ul>
+                    <li><img src="img/new_02.jpg"></li>
+                    <li class="product">Custom Made-2</li>
+                    <li class="price">Nu.20,000</li>
+                    <li class="cart">
+                    <button type="button" onclick='document.getElementById("demo02").innerHTML = "Successfully added to cart!"'>Add to Cart</button>
+                    <p id="demo02"></p>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><img src="img/new_03.jpg"></li>
+                    <li class="product">Custom Made-3</li>
+                    <li class="price">Nu.10,000</li>
+                    <li class="cart">
+                    <button type="button" onclick='document.getElementById("demo03").innerHTML = "Successfully added to cart!"'>Add to Cart</button>
+                    <p id="demo03"></p>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><img src="img/new_04.jpg"></li>
+                    <li class="product">Custom Made-4</li>
+                    <li class="price">Nu.15,000</li>
+                    <li class="cart">
+                    <button type="button" onclick='document.getElementById("demo04").innerHTML = "Successfully added to cart!"'>Add to Cart</button>
+                    <p id="demo04"></p>
+                </ul>
+            </div>
+            <div class="item clear">
+                <ul>
+                    <li><img src="img/new_05.jpg"></li>
+                    <li class="product">Custom Made-5</li>
+                    <li class="price">Nu.11,000</li>
+                    <li class="cart">
+                    <button type="button" onclick='document.getElementById("demo05").innerHTML = "Successfully added to cart!"'>Add to Cart</button>
+                    <p id="demo05"></p>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><img src="img/new_06.jpg"></li>
+                    <li class="product">Custom Made-6</li>
+                    <li class="price">Nu.10,000</li>
+                    <li class="cart">
+                    <button type="button" onclick='document.getElementById("demo06").innerHTML = "Successfully added to cart!"'>Add to Cart</button>
+                    <p id="demo06"></p>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><img src="img/new_07.jpg"></li>
+                    <li class="product">Custom Made-7</li>
+                    <li class="price">Nu.20,000</li>
+                    <li class="cart">
+                    <button type="button" onclick='document.getElementById("demo07").innerHTML = "Successfully added to cart!"'>Add to Cart</button>
+                    <p id="demo07"></p>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><img src="img/new_08.jpg"></li>
+                    <li class="product">Custom Made-8</li>
+                    <li class="price">Nu.10,000</li>
+                    <li class="cart">
+                    <button type="button" onclick='document.getElementById("demo08").innerHTML = "Successfully added to cart!"'>Add to Cart</button>
+                    <p id="demo08"></p>
+                </ul>
+            </div>
+          </div>
+        </footer>
+    </div>
+          <footer>
+              <div class="footCon">
+                  <p>Copy Right© 2020 ZamArts. All Rights Reserved.</p>
+              </div>
+          </footer>
+
+          <!-- popup -->
+          
+              <div class="popup01" id="popup01">
+                  <img class="p-img" src="img/new_01.jpg" alt="">
+                  <p class="popDes">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                       Esse quisquam tenetur doloribus ullam repudiandae itaque, 
+                       nisi eius tempore magni porro mollitia sapiente deserunt, 
+                       reiciendis quas magnam delectus praesentium sequi quia!</p>
+                       <button data-close-button class="btn">&times;</button>
+              </div>
+              <div  id="overlay"></div>
+          
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script>
+             $(function(){
+                 slideImg();
+                 function slideImg(){
+                     let $interval =setInterval(function(){
+                         slide()
+                     }, 3000);
+                     function slide (){
+                        $('.slide').animate({
+                         left:'-100%'
+
+                     },1000, "swing", function(){
+                         $(this).css ({left:0});
+                         $(this).append($('.slide img').eq(0));
+                     });
+                     }
+                 }
+             });
+
+             function myPop01() {
+                var popup = document.getElementById("popup01");
+                 popup.classList.toggle("show");
+            }
+
+
+const openPopup01Button = document.querySelectorAll('[data-popup01-target]')
+const closePopupButton = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openPopup01Button.forEach(img => {
+    img.addEventListener('click', () => {
+        const popup01 = document.querySelector(img.dataset.popup01Target)
+        openPopup01Button(popup01)
+    })
+})
+overlay.addEventListener('click', () => {
+    const popup01 = document.querySelectorAll('.popup01.active')
+    popup01.forEach(popup01 => {
+        closePopup01(popup01)
+    })
+})
+closePopup01Button.forEach(button=>{
+    button.addEventListener('click', () => {
+        const popup01 = button.closest('.popup01')
+        closePopup01 (popup01)
+    })
+})
+function openPopup01Img(popup01){
+    if(popup01== null)return
+    popup01.classList.add('active')
+    overlay.classList.add('active')
+}
+function closePopup01(popup01){
+    if(popup01== null) return
+    popup01.classList.remove('active')
+    overlay.classList.remove('active')
+}
+        
+          </script>
+    </body>
+</html>
